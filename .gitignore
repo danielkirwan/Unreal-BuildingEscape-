@@ -1,0 +1,14 @@
+#####################
+# Unreal unwanted files #
+#####################
+*/Build
+*/Binaries
+*/Intermediate
+*/DerivedDataCache
+*/Saved
+BuildingEscape/Content/StarterContent/
+
+#####################
+# Visual studio unwanted files #
+#####################
+*.VC.db
