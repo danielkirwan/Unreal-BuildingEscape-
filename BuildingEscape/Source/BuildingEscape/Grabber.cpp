@@ -3,7 +3,7 @@
 #include "BuildingEscape.h"
 #include "Grabber.h"
 
-
+#define OUT
 // Sets default values for this component's properties
 UGrabber::UGrabber()
 {
@@ -21,8 +21,7 @@ void UGrabber::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
-	
+	UE_LOG(LogTemp, Warning, TEXT("Grabber reporting"));
 }
 
 
@@ -31,6 +30,10 @@ void UGrabber::TickComponent( float DeltaTime, ELevelTick TickType, FActorCompon
 {
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
 
-	// ...
+	// Get the player viewpoint
+
+	// Ray-cast out to reach distance
+
+	// see what we hit
 }
 
