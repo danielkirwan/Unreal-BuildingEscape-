@@ -30,8 +30,23 @@ void UGrabber::BeginPlay()
 	else {
 		UE_LOG(LogTemp, Error, TEXT("No component found on %s"), *GetOwner()->GetName());
 	}
+
+	/// Lok for attache input component (Only appears at run time)
+	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
+	if(InputComponent) {
+		UE_LOG(LogTemp, Warning, TEXT("component found on %s"), *GetOwner()->GetName());
+		/// Bind the innput component
+		InputComponent->BindAction("Grab", IE_Pressed, this, &UGrabber::Grab);
+	}
+	else {
+		UE_LOG(LogTemp, Error, TEXT("No input component found on %s"), *GetOwner()->GetName());
+	}
 }
 
+void UGrabber::Grab() {
+	//
+	UE_LOG(LogTemp, Warning, TEXT("Key Pressed"));
+}
 
 /// Called every frame
 void UGrabber::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction )
