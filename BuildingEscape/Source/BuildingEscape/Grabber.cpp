@@ -20,8 +20,16 @@ UGrabber::UGrabber()
 void UGrabber::BeginPlay()
 {
 	Super::BeginPlay();
-
 	UE_LOG(LogTemp, Warning, TEXT("Grabber reporting"));
+
+	///Look for attched handle
+	PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
+	if (PhysicsHandle) {
+		// Physics handle found
+	}
+	else {
+		UE_LOG(LogTemp, Error, TEXT("No component found on %s"), *GetOwner()->GetName());
+	}
 }
 
 

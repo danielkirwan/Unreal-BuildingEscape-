@@ -22,6 +22,8 @@ public:
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 private: 
+	// How far the player can see
 	float Reach = 100.f;
 	
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
 };
